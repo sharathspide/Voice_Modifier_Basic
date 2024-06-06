@@ -53,8 +53,8 @@ function loadAudio(audioUrl) {
 }
 
 function applyNoiseGate(buffer) {
-    const threshold = 0.01; // Adjust this threshold as needed
-    const channelData = buffer.getChannelData(0);
+    const threshold = 0.0015; // Adjust this threshold as needed
+    const channelData = buffer.getChannelData(0.5);
 
     for (let i = 0; i < channelData.length; i++) {
         if (Math.abs(channelData[i]) < threshold) {
